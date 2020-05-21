@@ -1,0 +1,11 @@
+buildspec.yml
+.github
+.git
+.dockerignore
+Dockerfile*
+**/node_modules
+**/.next
+**/coverage
+**/cypress
+*-debug.log
+.circleci

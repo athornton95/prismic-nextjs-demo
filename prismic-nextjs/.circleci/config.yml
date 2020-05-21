@@ -1,0 +1,29 @@
+version: 2.1
+
+# Gloo orbs: https://github.com/TangoGroup/circleci-orbs
+orbs:
+  # cypress: cypress-io/cypress@1
+  # slack: circleci/slack@3.3.0
+  # env: christeredvartsen/persist-env@0.1.0
+  nectar: gloo/nectar@0.0.23
+  # eks: gloo/eks@0.0.2
+  # executors: gloo/executors@0.0.1
+
+executors:
+  cypress:
+    docker:
+      - image: cypress/included:3.3.2
+
+workflows:
+  version: 2
+  prismic-nextjs-pipeline:
+    jobs:
+      - nectar/docker_build:
+          name: build
+          context: aws-ecr
+          project_name: "prismic-nextjs"
+      - nectar/test:
+          name: test
+          context: aws-ecr
+          requires:
+            - build

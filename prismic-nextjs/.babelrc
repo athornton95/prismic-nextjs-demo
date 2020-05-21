@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    ["babel-plugin-import", {
+      "libraryName": "@material-ui/core",
+      "libraryDirectory": "",
+      "camel2DashComponentName": false
+    }, "core"],
+    ["babel-plugin-import", {
+      "libraryName": "@material-ui/icons",
+      "libraryDirectory": "",
+      "camel2DashComponentName": false
+    }, "icons"]
+  ],
+  "presets": ["next/babel"],
+  "env": {
+    "development": {
+      "presets": [["@emotion/babel-preset-css-prop", { "sourceMap": true, "autoLabel": true }]]
+    },
+    "test": {
+      "presets": [["@emotion/babel-preset-css-prop", { "sourceMap": true, "autoLabel": true }]]
+    },
+    "production": {
+      "presets": [["@emotion/babel-preset-css-prop"]]
+    }
+  }
+}
