@@ -82,6 +82,6 @@
     "eslint-plugin-react": "7.11.1",
     "eslint-plugin-react-hooks": "1.6.0",
     "jest": "23.6.0",
-    "webpack-bundle-analyzer": "2.13.1"
+    "webpack-bundle-analyzer": "3.8.0"
   }
 }
